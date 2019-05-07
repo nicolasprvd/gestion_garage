@@ -1,0 +1,26 @@
+h1 {
+    background-color: blueviolet;
+    color: salmon;
+}
+
+label {
+    background-color: antiquewhite;
+    border-block-end-width: 1mm;
+    border-block-end-color: whitesmoke;
+    color: brown;
+}
+button {
+    align-self: center;
+}
+
+input {
+    background-color: deeppink;
+}
+
+div {
+    background-color: gray;
+}
+
+img {
+    background-color: slategray;
+}
