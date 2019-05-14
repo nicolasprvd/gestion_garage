@@ -82,6 +82,8 @@
     <label for="options">Options </label>
     <textarea class="form-control" id="options" rows=3></textarea>
   </div>
+  
+  <p> AJOUTER LE CHOIX D'UN FICHIER (photo) </p>
 
   <button type="submit" class="btn btn-success">Vendre</button>
 
