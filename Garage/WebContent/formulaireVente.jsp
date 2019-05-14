@@ -3,52 +3,56 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Vente</title>
 </head>
 <body>
-<h1> Vente de Voiture </h1>
- 	
- <form>
- 
+<div style="text-align:center">
+  <h1>
+    Vente de Voiture
+  </h1>
+</div>
+
+<form  action="/HomePage.java"  method="post">
+
+  <div class="form-group">
+    <label for="brand">Marque </label>
+    <input type="text" class="form-control" id="brand" required>
+  </div>
+
+  <div class="form-group">
+    <label for="model">Modèle</label>
+    <input type="text" class="form-control" id="model">
+  </div>
+
+  <div class="form-group">
+    <label for="date">Année </label>
+    <input type="number" class="form-control" id="date" size="4">
+  </div>
+  
+  <div class="form-group">
+    <label for="immatriculation">Immatriculation </label>
+    <input type="text" class="form-control" id="immatriculation" required>
+  </div>
+
 	
-	<!-- Marque -->
-	 <p class="bold"> Marque  </p>
-      <INPUT type="text" name="Marque" size="10">	 
-	 
-	
-	<!-- Modèle -->
-	 <p class="bold"> Modèle </p>
-      <INPUT type="text" name="Modèle" size="10">
-     
-    
-	<!-- Année -->
-	 <p class="bold"> Année </p>
-      <INPUT type="number" name="Année" size="4">
-      
-      
-    <!-- Immatriculation -->
-	 <p class="bold"> Immatriculation </p>
-      <INPUT type="text" name="Modèle" size="12">
-    
-    
-    <!-- Carburant -->
-    <p class="bold"> Carburant </p>
-       <select>
+	<div class="form-group">
+	    <label for="carburant">Carburant</label>
+	    <select id="carburant" required>
          <option value="Essence">Essence </option>
          <option value="Diesel">Diesel </option> 
          <option value="Electrique">Electrique </option>
           <option value="GPL"> GPL </option>
        </select>
-     
-     
-	<!-- Nombre de Kilomètres -->
-	 <p class="bold"> Nombre de Km </p>
-	  <INPUT type="number" name="Km" size="6">
-	
-
-    <!-- Couleur -->
-     <p class="bold"> Couleur </p>
+	  </div>
+       
+   <div class="form-group">
+	    <label for="km">Nombre de kilomètres</label>
+	    <input type="number" class="form-control" id="km" size="6">
+	  </div>
+       
+  <div class="form-group">
+    <label for="color">Couleur  </label>
         <select id="Couleur">
           <option value="Noire">Noire</option>
           <option value="Blanche">Blanche</option>
@@ -58,27 +62,29 @@
           <option value="Jaune">Jaune</option>
           <option value="Grise">Grise</option>
         </select>
-        
-        
-    <!-- Nb de portes -->
-     <p class="bold"> Nombre de portes </p>
-        <select id="NbPortes">
+  </div>
+
+  
+  <div class="form-group">
+    <label for="price">Prix de vente </label>
+    <input type="number" class="form-control" id="price" size="8">
+  </div>
+  
+  <div class="form-group">
+	    <label for="portes">Nombre de portes</label>
+	    <select id="portes" required>
           <option value="3">3</option>
           <option value="5">5</option>
-	     </select>
-	  
-	     
-    <!-- Options -->
-	 <p class="bold"> Options </p>
-      <INPUT type="text" name="Options">
-      
-      
-    <!-- Prix de vente -->
-     <p class="bold"> Prix de vente </p>
-      <INPUT type="number" name="Prix de vente" size="8">  
-    
-    </form>
-    
+       </select>
+	  </div>
+  
+  <div class="form-group">
+    <label for="options">Options </label>
+    <textarea class="form-control" id="options" rows=3></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-success">Vendre</button>
+
 </form>
 </body>
 </html>

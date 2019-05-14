@@ -35,7 +35,7 @@ public class HomePage extends HttpServlet {
 		doGet(request, response);
 		
 		String brand = request.getParameter("brand");
-		String model = request.getParameter("model");
+		String model = request.getParameter("mod&el");
 		String date = request.getParameter("date");
 		String color = request.getParameter("color");
 		String state = request.getParameter("state");

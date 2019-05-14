@@ -4,12 +4,12 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>HotWheels</title>
+	<title>Achat</title>
 </head>
 <body>
 <div style="text-align:center">
   <h1>
-    Vente de Voiture
+    Achat de Voiture
   </h1>
 </div>
 
@@ -66,7 +66,7 @@
 
   
   <div class="form-group">
-    <label for="price">Prix de vente </label>
+    <label for="price">Prix d'achat </label>
     <input type="number" class="form-control" id="price" size="8">
   </div>
   
@@ -83,7 +83,7 @@
     <textarea class="form-control" id="options" rows=3></textarea>
   </div>
 
-  <button type="submit" class="btn btn-success">Vendre</button>
+  <button type="submit" class="btn btn-success">Valider l'achat</button>
 
 </form>
 </body>
