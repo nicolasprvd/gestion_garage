@@ -49,5 +49,6 @@
 	</span> 
 	
 	<input type="button" value="Réserver">
+	PASSEZ NOUS LE JAVA D'AUTHENTIFICATION 
 </body>
 </html>

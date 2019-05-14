@@ -85,6 +85,75 @@
 
   <button type="submit" class="btn btn-success">Valider l'achat</button>
 
+<script> 
+  	var immatriculation = new String(document.FormulaireAchat.immatriculation.value);
+		  if (immatriculation.length == 0) {
+			  afficheErreur("L'immatriculation doit être renseigné");
+		  }
+		  
+		  if(!verifier(immatriculation)) {
+			  afficheErreur("L'immatriculation ne doit contenir que des lettres non accentuée");
+		  }
+	  
+	var km = new String(document.formulaireAchat.km.value);
+		if (km.length == 0)
+		{
+			afficheErreur("Le kilométrage du véhicule doit être spécifiée");
+			return;
+		}
+		if (isNaN(km))
+		{
+			afficheErreur("Le kilométrage du véhicule doit être un nombre");
+		}
+		if (km.length >= 7)
+		{
+			afficheErreur("Le kilométrage du véhicule doit être inférieur à 7 chiffres");
+		}
+	var price = new String (document.formulaireAchat.price.value);
+		if (price.length == 0)
+		{
+			afficheErreur("le prix doit être renseigné");
+			return;
+		}
+		if(isNaN(price))
+		{
+			afficheErreur("le prix ne peut comporter de lettres !")
+		}
+		if (price.length >=10) 
+		{
+			afficheErreur ("le prix est trop élevé !")
+			
+	var date = new String (document.formulaireAchat.date.value);
+		if (date.length == 0)
+		{
+			afficheErreur("l'année doit être renseignée");
+			return;
+		}
+		if(isNaN(date))
+		{
+			afficheErreur("l'année ne peut comporter de lettres !")
+		}
+		if (date.length >=4) 
+		{
+			afficheErreur ("l'année ne peut comporter plus de 4 caractères")
+		}
+	
+	var brand = new String (document.FormulaireAchat.brand.value);
+		if (brand.length == 0)
+		{
+		afficheErreur("la marque doit être renseignée");
+		return;
+		} 
+		
+	var model = new String (document.FormulaireAchat.model.value);
+		if (model.length == 0)
+		{
+		afficheErreur("le modèle doit être renseigné");
+		return;
+		} 
+		
+	
+</script>
 </form>
 </body>
 </html>
