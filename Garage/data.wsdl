@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/data/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="data" targetNamespace="http://www.example.org/data/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/data/">
+      <xsd:element name="Voiture">
+        <xsd:complexType>
+          <xsd:sequence>
+            <element name="marque" type="xs:string"/>
+            <element name="modèle" type="xs:string"/>
+            <element name="couleur" type="xs:string"/>
+            <element name="Référence" type="xs:string"/>
+            <element name="options" type="xs:string"/>
+            <element name="moteur" type="xs:string"/>
+            <element name="prix" type="float"/>
+            <element name="kilométrage" type="long"/>
+            <element name="année" type="int"/>
+            <element name="Vente" type="xsd:boolean"/>
+            <element name="estLoué" type="xsd:boolean"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="NewOperationRequest">
+    <wsdl:part element="tns:NewOperation" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="NewOperationResponse">
+    <wsdl:part element="tns:NewOperationResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="data">
+    <wsdl:operation name="NewOperation">
+      <wsdl:input message="tns:NewOperationRequest"/>
+      <wsdl:output message="tns:NewOperationResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="dataSOAP" type="tns:data">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="NewOperation">
+      <soap:operation soapAction="http://www.example.org/data/NewOperation"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="data">
+    <wsdl:port binding="tns:dataSOAP" name="dataSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
