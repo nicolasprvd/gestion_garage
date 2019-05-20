@@ -1,0 +1,252 @@
+html, body {
+    background: #1C1D26;
+}
+
+body {
+    color: white;
+    font-family: "Roboto", Helvetica, sans-serif !important;
+    font-size: 25px;
+    font-weight: 100;
+    line-height: 1.75em;
+    margin: 0;
+}
+
+
+ul {
+    list-style: none;
+}
+
+
+/* Header */
+#header {
+    background: #272832;
+    height: 3.5em;
+    line-height: 3.5em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+#header nav {
+    position: absolute;
+    right: 1em;
+    top: 0;
+}
+
+#header nav ul {
+    margin: 0 0.5em;
+}
+
+#header nav ul li {
+    display: inline-block;
+    margin-left: 1em;
+}
+
+#header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+#header nav ul li a:not(#sign_up):hover {
+    color: #79B3E4;
+    text-decoration: underline;
+}
+
+#sign_up {
+    height: 2em;
+    line-height: 2em;
+    padding: 0.7em 1.2em;
+    background-color: #e44c65;
+    box-shadow: none;
+    border-radius: 4px;
+}
+
+#sign_up:hover {
+    background-color: #e76278;
+}
+
+/* Banner */
+#title {
+    width: 100%;
+    background-color: #79B3E4;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
+}
+
+#title:after {
+    background-image: -webkit-linear-gradient(top, #171820, #171820);
+    opacity: 0.7;
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+#title #content_title {
+    display: inline-block;
+    padding: 4em 6em;
+    position: relative;
+    text-align: right;
+    vertical-align: middle;
+    z-index: 1;
+}
+
+#title #content_title div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#title #content_title div h2 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+#title #content_title div p {
+    margin: 0.5em 0 0 0;
+    top: 0;
+}
+
+#title #content_title #cars {
+    border-radius: 100%;
+    display: inline-block;
+    height: 18em;
+    margin-left: 3em;
+    vertical-align: middle;
+    width: 18em;
+}
+
+#title #content_title #cars img {
+    border-radius: 100%;
+    display: block;
+    width: 80%;
+    margin: 10% 0 0 10%;
+}
+
+
+/* Flèche next */
+#next {
+    bottom: 0;
+    height: 1.8em;
+    left: 50%;
+    margin: 0;
+    position: absolute;
+}
+
+#next:before {
+    background-image: url("../images/arrow.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    content: '';
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    z-index: 1;
+}
+
+/** Banière **/
+#banner {
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 19em;
+    overflow: hidden;
+    position: relative;
+}
+
+#banner:before {
+    background-image: url("../images/banner.jpg");
+    background-repeat: no-repeat;
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+/* Contenu page */
+#page {
+    width: 100%;
+    background-color: #F3B5BD;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
+}
+
+#page:after {
+    background-image: -webkit-linear-gradient(top, #171820, #171820);
+    opacity: 0.3;
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+#page #content_page {
+    display: inline-block;
+    padding: 4em 6em;
+    position: relative;
+    vertical-align: middle;
+    z-index: 1;
+    border-top: 0.4em solid #8e6b71;
+}
+
+#page #content_page div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#page #content_page div h2 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+#page #content_page div p {
+    margin: 0.5em 0 0 0;
+    top: 0;
+}
+
+/** Flèche retour **/
+#back {
+    bottom: 0;
+    height: 1.8em;
+    left: 50%;
+    margin: 0;
+    position: absolute;
+}
+
+#back:before {
+    background-image: url("../images/arrow.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    content: '';
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    z-index: 1;
+}
+
+/* Footer */
+#footer {
+    background: #272833;
+    padding: 0.5em 0;
+    text-align: center;
+}
+
+#footer #copyright {
+    color: #FFFFFF;
+    opacity: 0.5;
+    font-size: 0.5em;
+    text-align: center;
+}
