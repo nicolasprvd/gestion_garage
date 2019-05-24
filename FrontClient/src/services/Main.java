@@ -19,7 +19,7 @@ public class Main {
 		try {
 			Vehicule[] vehicule = garage.getVehicules();
 			for (int i=0; i<vehicule.length; i++) {
-				System.out.println(vehicule[i].getImmatriculation());
+				System.out.println(vehicule[i].getMarque());
 			}
 			
 		} catch (RemoteException e) {

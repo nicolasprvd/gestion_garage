@@ -17,18 +17,12 @@
 	 String Marque = request.getParameter("marque"); 
 	 String Modele = request.getParameter("modele"); 
 	 String Carburant = request.getParameter("carburant"); 
-	 
+
 	 Vehicule vehicule = new Vehicule(); 
 	 vehicule.setMarque(Marque);
 	 vehicule.setModele(Modele);
 	 vehicule.setMoteur(Carburant);
 	 
-	 listeVoiture = new Array();
-	 garage = new services.GestionGarageService();
- 
-		 
- 
- 
  %>
  
  Marque : <%out.print(vehicule.getMarque());%>

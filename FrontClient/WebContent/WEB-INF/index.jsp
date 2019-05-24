@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" 
-    import="services.GestionGarageServiceProxy, services.Vehicule" %>
+    import="services.GestionGarageServiceProxy, services.Vehicule " %>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<jsp:useBean id="demo" class="services.Demo" scope="session" />
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -112,61 +112,98 @@
        <button type="submit" value="Lancer la recherche" onclick="Basic.jsp'">Recherche</button>
       </form>
        
-     
-     
      <h2> Liste de tous les véhicules </h2>
-
-	<div id="liste"></div>
 	
 	
 	<img src="https://cdn.pixabay.com/photo/2018/03/02/16/30/car-3193562_960_720.jpg" height="200" width="300" />
 	
-	<h1>Welcome !!!</h1>
+		<c:forEach items="${vehicules}" var="vehicule">
+		        <div> Immatriculation : ${vehicule.immatriculation}</div>
+		        <div>Marque : ${vehicule.marque}</div>
+		        <div>Modèle : ${vehicule.modele}</div>
+		        <div>Couleur : ${vehicule.couleur}</div>
+		        <div>Moteur : ${vehicule.moteur}</div>
+		        <div>Options : ${vehicule.options}</div>
+		        <div>Prix : ${vehicule.prix}</div>
+		        <div>Kilométrage : ${vehicule.kilometrage}</div>
+		        <div>Année du véhicule : ${vehicule.anneeVehicule}</div><br>
+		</c:forEach>
+
 	<form id="myform" name="myform" method="post" action="Basic.jsp">
  		<input type="text"  name="user" />
     	<input type="text"   name="password" />    
     	<input type="submit" value="go" onclick="Basic.jsp'" />
-    </form>
+    </form>	
+    
+    <h1> Achat de Voiture </h1>
+</div>
+
+<form  action="servletVehicule"  method="post">
+
+  <div class="form-group">
+    <label for="brand">Marque </label>
+    <input type="text" class="form-control" id="brand" required>
+  </div>
+
+  <div class="form-group">
+    <label for="modele">Modèle</label>
+    <input type="text" class="form-control" id="modele">
+  </div>
+
+  <div class="form-group">
+    <label for="date">Année </label>
+    <input type="number" class="form-control" id="date" size="4">
+  </div>
+  
+  <div class="form-group">
+    <label for="immatriculation">Immatriculation </label>
+    <input type="text" class="form-control" id="immatriculation" required>
+  </div>
+
 	
-	<%
-	import java.util.Arrays;
-	
-	listeVoiture = new Array();
-	listeVoiture = request.getQueryString();
-	%>
-	<script> 
-		voiture1 = new Array();
-		voiture1[0] = "Mercedes";
-		voiture1[1] = "modeleeeee";
-		voiture1[2] = "2003";
-		voiture1[3] = "fg gf 12";
-		
-		voiture2 = new Array();
-		voiture2[0] = "Heineken";
-		voiture2[1] = "ellemode";
-		voiture2[2] = "1997";
-		voiture2[3] = "fa fg yh";
-	
-	
-		listeVoiture = new Array();
-		listeVoiture[0] = voiture1;
-		listeVoiture[1] = voiture2;
-	
-		function mesListes(){
-			var i, j;
-			for (i=0; i<listeVoiture.length; i++){
-				document.write("<span> "+ i);
-				for (j=0; j<4; j++) {
-					document.write("<div> "+listeVoiture[i][j]+" </div>");
-				}
-				
-				// document.write("<img src=\"https://cdn.pixabay.com/photo/2018/03/02/16/30/car-3193562_960_720.jpg\"/>");
-				document.write("</span>");
-			}
-		}
-		document.getElementById("liste").innerHTML = mesListes();
-	</script>
-	
+	<div class="form-group">
+	    <label for="carburant">Carburant</label>
+	    <select id="carburant" required>
+         <option value="Essence">Essence </option>
+         <option value="Diesel">Diesel </option> 
+         <option value="Electrique">Electrique </option>
+          <option value="GPL"> GPL </option>
+       </select>
+	  </div>
+       
+   <div class="form-group">
+	    <label for="km">Nombre de kilomètres</label>
+	    <input type="number" class="form-control" id="km" size="6">
+	  </div>
+       
+  <div class="form-group">
+    <label for="couleur">Couleur  </label>
+        <select id="couleur">
+          <option value="Noire">Noire</option>
+          <option value="Blanche">Blanche</option>
+          <option value="Rouge">Rouge</option>
+          <option value="Bleue">Bleue</option>
+          <option value="Verte">Verte</option>
+          <option value="Jaune">Jaune</option>
+          <option value="Grise">Grise</option>
+        </select>
+  </div>
+
+  
+  <div class="form-group">
+    <label for="prix">Prix d'achat </label>
+    <input type="number" class="form-control" id="prix" size="8">
+  </div>
+  
+  
+  <div class="form-group">
+    <label for="options">Options </label>
+    <textarea class="form-control" id="options" rows=3></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-success">Valider l'achat</button>
+
+</form>
 	
 </body>
 </html>
