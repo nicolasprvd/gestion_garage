@@ -20,7 +20,9 @@
     <nav id="nav">
         <ul>
             <li><a href="accueil.jsp">Accueil</a></li>
-            <li><a href="carDetail.jsp">Rechercher une voiture</a></li>
+            <li><a href="../../Garage/WebContent/carDetail.jsp">Rechercher une voiture</a></li>
+            <li><a href="formulaireAjout.jsp">Ajouter une voiture</a></li>
+            <li><a href="formulaireVente.jsp">Vendre une voiture</a></li>
             <li><a href="connexion.jsp" id="sign_up">Se connecter</a></li>
         </ul>
     </nav>

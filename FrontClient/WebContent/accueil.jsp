@@ -14,13 +14,16 @@
 </head>
 
 <body>
+
 <!-- Header -->
 <header id="header">
     <img id="logo" src="images/my_super_car.png" alt="Logo My Super Car">
     <nav id="nav">
         <ul>
             <li><a href="accueil.jsp">Accueil</a></li>
-            <li><a href="carDetail.jsp">Rechercher une voiture</a></li>
+            <li><a href="../../Garage/WebContent/carDetail.jsp">Rechercher une voiture</a></li>
+            <li><a href="formulaireAjout.jsp">Ajouter une voiture</a></li>
+            <li><a href="formulaireVente.jsp">Vendre une voiture</a></li>
             <li><a href="connexion.jsp" id="sign_up">Se connecter</a></li>
         </ul>
     </nav>
@@ -31,8 +34,8 @@
     <div id="title">
         <div id="content_title">
             <div>
-                <h3>Piéton : automobiliste descendu de sa voiture.</h3>
-                <p> Automobiliste : piéton remonté dans sa voiture.</p>
+                <h3>My Super Car</h3>
+                <p>En route vers le bien être</p>
             </div>
             <span id="cars"><img src="images/cars.jpg" alt=""/></span>
         </div>
@@ -45,7 +48,7 @@
     <!-- One -->
     <div id="page">
         <div id="content_page">
-            <div>
+            <div class="left">
                 <p>Joe le taxi,
                     Y va pas partout,
                     Y marche pas au soda,
@@ -67,33 +70,9 @@
                     Rhum et mambo,
                     Joe, Joe, Joe</p>
             </div>
-            <div>
-                <p>Dans sa caisse,
-                    La musique a Joe résonne,
-                    C'est la rumba,
-                    Le vieux rock au mambo bidon,
-                    Vas-y Joe,
-                    Vas-y Joe,
-                    Vas-y fonce,
-                    Dans la nuit vers l'amazone,
-                    Joe le taxi,
-                    Et Xavier Cugat,
-                    Joe le taxi,
-                    Et Yma Sumac,
-                    Joe, Joe, Joe,
-                    Joe le taxi,
-                    C'est sa vie,
-                    Le rhum au mambo,
-                    Embouteillage,
-                    Joe le taxi,
-                    Et les Mariachis,
-                    Joe le taxi,
-                    Et le cha-cha-chi,
-                    Joe le taxi,
-                    Et le cha-cha-chi,
-                    Vas-y Joe,
-                    Vas-y fonce,
-                    Dans la nuit vers l'amazone</p>
+            <div class="right_maps">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2829.860084455651!2d-0.6789746845925868!3d44.824414979098606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDTCsDQ5JzI3LjkiTiAwwrA0MCczNi40Ilc!5e0!3m2!1sfr!2sfr!4v1558686367539!5m2!1sfr!2sfr"
+                        width="350" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
         </div>
         <a href="#content" id="back"></a>
@@ -118,6 +97,5 @@
     </ul>
     <p id="copyright">&copy; My Super Car | 20/05/2019</p>
 </footer>
-
 </body>
 </html>
