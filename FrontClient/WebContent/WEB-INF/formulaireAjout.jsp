@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
+pageEncoding="UTF-8" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -34,33 +34,33 @@
         </div>
 
         <div>
-            <form action="/HomePage.java" method="post">
+            <form action="servletVehicule" method="post">
                 <div id="input_formulaireAjout">
                     <!-- Marque -->
                     <div class="form-group">
                         <label for="brand">Marque :</label>
-                        <input type="text" id="brand" required>
+                        <input type="text" id="brand">
                     </div>
                     <!-- Modèle -->
                     <div class="form-group">
                         <label for="model">Modèle :</label>
-                        <input type="text" id="model" required>
+                        <input type="text" id="model">
                     </div>
                     <!-- Immatriculation -->
                     <div class="form-group">
                         <label for="immatriculation">Immatriculation :</label>
-                        <input type="text" id="immatriculation" required>
+                        <input type="text" id="immatriculation">
                     </div>
                     <div class="left">
                         <!-- Année -->
                         <div class="form-group">
                             <label for="date">Année :</label>
-                            <input type="number" id="date" size="4" required>
+                            <input type="number" id="date" size="4">
                         </div>
                         <!-- Carburant -->
                         <div class="form-group">
                             <label for="carburant">Carburant :</label>
-                            <select id="carburant" required>
+                            <select id="carburant">
                                 <option value="Essence">Essence</option>
                                 <option value="Diesel">Diesel</option>
                                 <option value="Electrique">Electrique</option>
@@ -70,7 +70,7 @@
                         <!-- Kilomètres -->
                         <div class="form-group">
                             <label for="km">Kilomètres :</label>
-                            <input type="number" id="km" size="6" required>
+                            <input type="number" id="km" size="6">
                         </div>
                     </div>
 
@@ -91,42 +91,71 @@
                         <!-- Prix -->
                         <div class="form-group">
                             <label for="price">Prix :</label>
-                            <input type="number" id="price" size="8" required>
-                        </div>
-                        <!-- Portes -->
-                        <div class="form-group">
-                            <label for="portes">Portes :</label>
-                            <select id="portes" required>
-                                <option value="3">3</option>
-                                <option value="5">5</option>
-                            </select>
+                            <input type="number" id="price" size="8">
                         </div>
                     </div>
                     <!-- Options -->
-                    <div class="form-group">
+                    <div id="option" class="form-group">
                         <label for="options">Options :</label>
                         <textarea id="options" rows="3  "></textarea>
                     </div>
                     <!-- Bouton de validation -->
                     <div id="submit_formulaireAjout">
-                        <button type="submit" id="button_formulaireAjout">Valider l'achat</button>
+                        <button type="submit" id="button_formulaireAjout">Valider l'ajout</button>
                     </div>
 
                     <script>
-                        // Vérifie que les saisies dans les input respectent bien les conditions
+                        var marque = document.getElementById(brand);
+                        var modele = document.getElementById(model);
                         var immatriculation = document.getElementById(immatriculation);
                         var date = document.getElementById(date);
-                        var nbreKM = document.getElementById(km);
+                        var km = document.getElementById(km);
                         var prix = document.getElementById(price);
 
+
+                        if (marque.length == 0) {
+                            afficheErreur("La marque doit être renseignée");
+                            return;
+                        }
+                        if (modele.length == 0) {
+                            afficheErreur("Le modèle doit être renseigné");
+                            return;
+                        }
+                        if (immatriculation.length == 0) {
+                            afficheErreur("L'immatriculation doit être renseigné");
+                        }
                         if (!verifier(immatriculation)) {
-                            alert("L'immatriculation ne peut contenir que des lettres non accentuée");
-                        } else if (date.length !== 4) {
-                            alert("L'année contient 4 chiffres");
-                        } else if (nbreKM.length >= 8) {
-                            alert("Le kilométrage ne peut pas être supérieur à 8 chiffres");
-                        } else if (prix.length > 15) {
-                            alert("Le prix du véhicule doit être inférieur à 15 chiffres");
+                            afficheErreur("L'immatriculation ne doit contenir que des lettres non accentuée");
+                        }
+                        if (date.length == 0) {
+                            afficheErreur("l'année doit être renseignée");
+                            return;
+                        }
+                        if (isNaN(date)) {
+                            afficheErreur("l'année ne peut comporter de lettres !")
+                        }
+                        if (date.length >= 4) {
+                            afficheErreur("l'année ne peut comporter plus de 4 caractères")
+                        }
+                        if (km.length == 0) {
+                            afficheErreur("Le kilométrage du véhicule doit être spécifiée");
+                            return;
+                        }
+                        if (isNaN(km)) {
+                            afficheErreur("Le kilométrage du véhicule doit être un nombre");
+                        }
+                        if (km.length >= 7) {
+                            afficheErreur("Le kilométrage du véhicule doit être inférieur à 7 chiffres");
+                        }
+                        if (price.length == 0) {
+                            afficheErreur("le prix doit être renseigné");
+                            return;
+                        }
+                        if (isNaN(price)) {
+                            afficheErreur("le prix ne peut comporter de lettres !")
+                        }
+                        if (price.length >= 10) {
+                            afficheErreur("le prix est trop élevé !")
                         }
                     </script>
                 </div>

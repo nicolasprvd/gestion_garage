@@ -34,7 +34,7 @@
             <p>Formulaire de vente d'une voiture</p>
         </div>
 
-        <form action="/HomePage.java" method="post">
+        <form action="servletVehicule" method="post">
             <div id="input_formulaireVente">
                 <!-- Immatriculation -->
                 <div class="form-group">

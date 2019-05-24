@@ -331,6 +331,11 @@ input[type="text"], input[type="mdp"], textarea {
 #input_formulaireRecherche #model{
     width: 78px;
 }
+
+#option {
+    margin-top: 9%;
+}
+
 .right_maps {
     margin-left: 19%;
 }
