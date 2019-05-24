@@ -114,7 +114,6 @@
        
      <h2> Liste de tous les véhicules </h2>
 	
-	
 	<img src="https://cdn.pixabay.com/photo/2018/03/02/16/30/car-3193562_960_720.jpg" height="200" width="300" />
 	
 		<c:forEach items="${vehicules}" var="vehicule">
@@ -135,35 +134,42 @@
     	<input type="submit" value="go" onclick="Basic.jsp'" />
     </form>	
     
-    <h1> Achat de Voiture </h1>
+    <h1> Ajout de Voiture </h1>
 </div>
 
 <form  action="servletVehicule"  method="post">
-
-  <div class="form-group">
-    <label for="brand">Marque </label>
-    <input type="text" class="form-control" id="brand" required>
-  </div>
+  
+  <!-- Marque -->
+	<div class="form-group">
+    	<label for="brand">Marque </label>
+    	<select id="brand" name="marque">
+  		  <option value="volkswagen">VolksWagen</option>
+  		  <option value="Porsche">Porsche</option>
+		  <option value="Mercedes">Mercedes</option>
+  		  <option value="Audi">Audi</option>
+  		  <option value="BMW">BMW</option>
+		</select>
+  	</div>
 
   <div class="form-group">
     <label for="modele">Modèle</label>
-    <input type="text" class="form-control" id="modele">
+    <input type="text" class="form-control" id="modele" name="modele">
   </div>
 
   <div class="form-group">
     <label for="date">Année </label>
-    <input type="number" class="form-control" id="date" size="4">
+    <input type="number" class="form-control" id="date" size="4" name="date">
   </div>
   
   <div class="form-group">
     <label for="immatriculation">Immatriculation </label>
-    <input type="text" class="form-control" id="immatriculation" required>
+    <input type="text" class="form-control" id="immatriculation" name="immatriculation" required>
   </div>
 
 	
 	<div class="form-group">
 	    <label for="carburant">Carburant</label>
-	    <select id="carburant" required>
+	    <select id="carburant" name="carburant" required>
          <option value="Essence">Essence </option>
          <option value="Diesel">Diesel </option> 
          <option value="Electrique">Electrique </option>
@@ -173,12 +179,12 @@
        
    <div class="form-group">
 	    <label for="km">Nombre de kilomètres</label>
-	    <input type="number" class="form-control" id="km" size="6">
+	    <input type="number" class="form-control" id="km" size="6" name="km">
 	  </div>
        
   <div class="form-group">
     <label for="couleur">Couleur  </label>
-        <select id="couleur">
+        <select id="couleur" name="couleur">
           <option value="Noire">Noire</option>
           <option value="Blanche">Blanche</option>
           <option value="Rouge">Rouge</option>
@@ -192,18 +198,56 @@
   
   <div class="form-group">
     <label for="prix">Prix d'achat </label>
-    <input type="number" class="form-control" id="prix" size="8">
+    <input type="number" class="form-control" id="prix" size="8" name="prix">
   </div>
   
   
   <div class="form-group">
     <label for="options">Options </label>
-    <textarea class="form-control" id="options" rows=3></textarea>
+    <textarea class="form-control" id="options" name="options" rows=3></textarea>
   </div>
 
-  <button type="submit" class="btn btn-success">Valider l'achat</button>
+  <button type="submit" class="btn btn-success">Valider l'ajout</button>
 
 </form>
+
+<div id="formulaireVente">
+    <div id="content_formulaireVente">
+        <div id="title_formulaireVente">
+            <h1>Formulaire de vente d'une voiture</h1>
+        </div>
+
+        <form action="servletVehicule" method="post">
+            <div id="input_formulaireVente">
+                <div class="form-group">
+                    <label for="immatriculation">Immatriculation :</label>
+                    <input type="text" id="immatriculation" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="client">Nom du client :</label>
+                    <input type="text" id="client" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Prix de la vente :</label>
+                    <input type="number" id="price" size="4" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Date de la vente :</label>
+                    <input type="number" id="date" size="4" required>
+                </div>
+
+
+                <div id="submit_formulaireVente">
+                    <button type="submit" id="button_formulaireVente" onclick="validation()">Valider la vente</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
 	
 </body>
 </html>

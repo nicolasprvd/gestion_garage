@@ -40,8 +40,8 @@ public class servletVehicule extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
+		// réupération des données
 		String marque = request.getParameter("brand");
 		String modele = request.getParameter("modele");
 		String immatriculation = request.getParameter("immatriculation");
@@ -52,22 +52,12 @@ public class servletVehicule extends HttpServlet {
 		int km = Integer.parseInt(request.getParameter("km"));
 		double prix = Double.parseDouble(request.getParameter("prix"));
 		
-		
+		// Ajout du véhicule
 		GestionGarageServiceProxy garage = new GestionGarageServiceProxy();
-		Vehicule vehicule = new Vehicule();
-		vehicule.setMarque(marque);
-		vehicule.setModele(modele);
-		vehicule.setAnneeVehicule(annee);
-		vehicule.setImmatriculation(immatriculation);
-		vehicule.setMoteur(carburant);
-		vehicule.setKilometrage(km);
-		vehicule.setCouleur(couleur);
-		vehicule.setPrix(prix);
-		vehicule.setOptions(options);
-		// vehicule.setType("voiture");
-		vehicule.setEnVente(false);
-		vehicule.setEstLoue(false);
-		garage.achatVehicule(vehicule);
+		Vehicule vehicule = new Vehicule(immatriculation, marque, modele, couleur, carburant, options, prix, km, annee, VehiculeType.VOITURE, false, true);
+		garage.ajouterVehicule(vehicule);
+		
+		getServletContext().getRequestDispatcher("/WEB-INF/Basic.jsp").forward(request, response);
 	}
 
 }
