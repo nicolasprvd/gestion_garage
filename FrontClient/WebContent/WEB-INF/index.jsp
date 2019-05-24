@@ -1,209 +1,102 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" 
-    import="services.GestionGarageServiceProxy, services.Vehicule " %>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+         pageEncoding="UTF-8"
+         import="services.GestionGarageServiceProxy, services.Vehicule " %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>MySuperCar</title>
+    <title>My Super Car - Accueil</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="../css/main.css"/>
+    <link rel="icon" type="image/png" href="../images/my_super_car.png"/>
 </head>
-<body> <!--  http://localhost:9080/FrontClient/sampleGestionGarageServiceProxy/TestClient.jsp  POUR TESTER -->
 
-<h2> Recherche de Véhicules </h2>
+<body>
 
-<form method="post" action="Basic.jsp">
-	
-	<!-- Marque -->
-	<div class="form-group">
-    	<label for="brand">Marque </label>
-    	<select id="brand"name="marque">
-  		  <option value="volkswagen">VolksWagen</option>
-  		  <option value="Porsche">Porsche</option>
-		  <option value="Mercedes">Mercedes</option>
-  		  <option value="Audi">Audi</option>
-  		  <option value="BMW">BMW</option>
-		</select>
-  	</div>
-	
-	<!-- Modèle -->
-    <div class="form-group">
-    	<label for="model">Modèle</label>
-    	<input type="text" class="form-control" id="model" name="modele">
-  	</div>
-	 
-    <!-- Carburant -->
-    <div class="form-group">
-	    <label for="carburant" name="carburant">Carburant</label>
-	    <select id="carburant">
-         <option value="Essence">Essence </option>
-         <option value="Diesel">Diesel </option> 
-         <option value="Electrique">Electrique </option>
-         <option value="GPL"> GPL </option>
-        </select>
-	  </div>
-    
-    <!-- Kilomètres minimum -->
-    <div class="form-group">
-	    <label for="KmMin">Kilomètres minimum</label>
-	    <select id="KmMin">
-	      <option value="0">0</option>
-          <option value="25000">25000</option>
-          <option value="50000">50000</option>
-          <option value="75000">75000</option>
-          <option value="100000">100000</option>
-          <option value="125000">125000</option>
-          <option value="150000">150000</option>
-          <option value="175000">175000</option>
-        </select>
-	  </div>
+<!-- Header -->
+<header id="header">
+    <img id="logo" src="../images/my_super_car.png" alt="Logo My Super Car">
+    <nav id="nav">
+        <ul>
+            <li><a href="index.jsp">Accueil</a></li>
+            <li><a href="recherche.jsp">Rechercher une voiture</a></li>
+            <li><a href="formulaireAjout.jsp">Ajouter une voiture</a></li>
+            <li><a href="formulaireVente.jsp">Vendre une voiture</a></li>
+            <li><a href="connexion.jsp" id="sign_up">Se connecter</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <!-- Kilomètres maximum -->
-     <div class="form-group">
-	    <label for="KmMax">Kilomètres maximum</label>
-	    <select id="KmMax">
-          <option value="25000">25000</option>
-          <option value="50000">50000</option>
-          <option value="75000">75000</option>
-          <option value="100000">100000</option>
-          <option value="125000">125000</option>
-          <option value="150000">150000</option>
-          <option value="175000">175000</option>
-          <option value="200000">200000</option>
-        </select>
-	  </div>
-            
-     
-    <!-- Prix minimum -->
-    <div class="form-group">
-     <label for="prixMin">Prix minimum</label>
-	    <select id="prixMin">
-         <option value="1500">1500</option>
-         <option value="2500">2500</option>
-         <option value="5000">5000</option>
-         <option value="7500">7500</option>
-         <option value="10000">10000</option>
-         <option value="12500">12500</option>
-         <option value="15000">15000</option>
-         <option value="17500">17500</option>
-         <option value="20000">20000</option>
-         <option value="30000">30000</option>
-       </select>
+<!-- Première partie -->
+<div id="content">
+    <div id="title">
+        <div id="content_title">
+            <div>
+                <h3>My Super Car</h3>
+                <p>En route vers le bien être</p>
+            </div>
+            <span id="cars"><img src="../images/cars.jpg" alt=""/></span>
+        </div>
+        <a href="#page" id="next"></a>
     </div>
-            
-    
-    <!-- Prix maximum -->
-    <div class="form-group">
-     <label for="prixMax">Prix maximum</label>
-	    <select id="prixMax">
-         <option value="2500">2500</option>
-         <option value="5000">5000</option>
-         <option value="7500">7500</option>
-         <option value="10000">10000</option>
-         <option value="12500">12500</option>
-         <option value="15000">15000</option>
-         <option value="17500">17500</option>
-         <option value="20000">20000</option>
-         <option value="30000">30000</option>
-         <option value="40000">40000</option>
-         <option value="50000">50000</option>
-       </select>
-       </div>
-       <button type="submit" value="Lancer la recherche" onclick="Basic.jsp'">Recherche</button>
-      </form>
-       
-     <h2> Liste de tous les véhicules </h2>
-	
-	
-	<img src="https://cdn.pixabay.com/photo/2018/03/02/16/30/car-3193562_960_720.jpg" height="200" width="300" />
-	
-		<c:forEach items="${vehicules}" var="vehicule">
-		        <div> Immatriculation : ${vehicule.immatriculation}</div>
-		        <div>Marque : ${vehicule.marque}</div>
-		        <div>Modèle : ${vehicule.modele}</div>
-		        <div>Couleur : ${vehicule.couleur}</div>
-		        <div>Moteur : ${vehicule.moteur}</div>
-		        <div>Options : ${vehicule.options}</div>
-		        <div>Prix : ${vehicule.prix}</div>
-		        <div>Kilométrage : ${vehicule.kilometrage}</div>
-		        <div>Année du véhicule : ${vehicule.anneeVehicule}</div><br>
-		</c:forEach>
 
-	<form id="myform" name="myform" method="post" action="Basic.jsp">
- 		<input type="text"  name="user" />
-    	<input type="text"   name="password" />    
-    	<input type="submit" value="go" onclick="Basic.jsp'" />
-    </form>	
-    
-    <h1> Achat de Voiture </h1>
+    <!-- Image -->
+    <div id="banner"></div>
+
+    <!-- Deuxième partie -->
+    <div id="page">
+        <div id="content_page">
+            <div class="left">
+                <p>Joe le taxi,
+                    Y va pas partout,
+                    Y marche pas au soda,
+                    Son saxo jaune,
+                    Connaît toutes les rues par cœur,
+                    Tous les petits bars,
+                    Tous les coins noirs,
+                    Et la Seine,
+                    Et ses ponts qui brillent,
+                    Dans sa caisse,
+                    La musique a Joe,
+                    C'est la rumba,
+                    Le vieux rock au mambo,
+                    Joe le taxi,
+                    C'est sa vie,
+                    Le rhum au mambo,
+                    Embouteillage,
+                    Il est comme ça,
+                    Rhum et mambo,
+                    Joe, Joe, Joe</p>
+            </div>
+            <!-- Maps -->
+            <div class="right_maps">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2829.860084455651!2d-0.6789746845925868!3d44.824414979098606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDTCsDQ5JzI3LjkiTiAwwrA0MCczNi40Ilc!5e0!3m2!1sfr!2sfr!4v1558686367539!5m2!1sfr!2sfr"
+                        width="350" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </div>
+        <a href="#" id="back"></a>
+    </div>
 </div>
 
-<form  action="servletVehicule"  method="post">
-
-  <div class="form-group">
-    <label for="brand">Marque </label>
-    <input type="text" class="form-control" id="brand" required>
-  </div>
-
-  <div class="form-group">
-    <label for="modele">Modèle</label>
-    <input type="text" class="form-control" id="modele">
-  </div>
-
-  <div class="form-group">
-    <label for="date">Année </label>
-    <input type="number" class="form-control" id="date" size="4">
-  </div>
-  
-  <div class="form-group">
-    <label for="immatriculation">Immatriculation </label>
-    <input type="text" class="form-control" id="immatriculation" required>
-  </div>
-
-	
-	<div class="form-group">
-	    <label for="carburant">Carburant</label>
-	    <select id="carburant" required>
-         <option value="Essence">Essence </option>
-         <option value="Diesel">Diesel </option> 
-         <option value="Electrique">Electrique </option>
-          <option value="GPL"> GPL </option>
-       </select>
-	  </div>
-       
-   <div class="form-group">
-	    <label for="km">Nombre de kilomètres</label>
-	    <input type="number" class="form-control" id="km" size="6">
-	  </div>
-       
-  <div class="form-group">
-    <label for="couleur">Couleur  </label>
-        <select id="couleur">
-          <option value="Noire">Noire</option>
-          <option value="Blanche">Blanche</option>
-          <option value="Rouge">Rouge</option>
-          <option value="Bleue">Bleue</option>
-          <option value="Verte">Verte</option>
-          <option value="Jaune">Jaune</option>
-          <option value="Grise">Grise</option>
-        </select>
-  </div>
-
-  
-  <div class="form-group">
-    <label for="prix">Prix d'achat </label>
-    <input type="number" class="form-control" id="prix" size="8">
-  </div>
-  
-  
-  <div class="form-group">
-    <label for="options">Options </label>
-    <textarea class="form-control" id="options" rows=3></textarea>
-  </div>
-
-  <button type="submit" class="btn btn-success">Valider l'achat</button>
-
-</form>
-	
+<!-- Footer -->
+<footer id="footer">
+    <ul id="icons">
+        <li>
+            <a href="#" class="icon alt fa-twitter"><img src="../images/twitter.PNG" alt="Twitter"></a>
+        </li>
+        <li>
+            <a href="#" class="icon alt fa-facebook"><img src="../images/facebook.PNG" alt="Facebook"></a>
+        </li>
+        <li>
+            <a href="#" class="icon alt fa-linkedin"><img src="../images/linkedin.PNG" alt="Linkedin"></a>
+        </li>
+        <li>
+            <a href="#" class="icon alt fa-envelope"><img src="../images/email.PNG" alt="Email"></a>
+        </li>
+    </ul>
+    <p id="copyright">&copy; My Super Car | 20/05/2019</p>
+</footer>
 </body>
 </html>

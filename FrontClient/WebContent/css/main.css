@@ -16,7 +16,7 @@ ul {
 }
 
 p {
-    margin: 0!important;
+    margin: 0 !important;
 }
 
 /* Header */
@@ -160,7 +160,7 @@ p {
 }
 
 
-#page #content_page {
+#content_page {
     display: inline-block;
     padding: 4em 6em;
     position: relative;
@@ -170,15 +170,32 @@ p {
     border-top: 0.4em solid #8e6b71;
 }
 
-#page #content_page div {
+#content_page div {
     display: inline-block;
     vertical-align: middle;
 }
 
-#page #content_page div h2 {
+#content_page div h2 {
     font-size: 2.5em;
     margin: 0;
 }
+
+/** Recherche voitures **/
+#result {
+    width: 100%;
+    position: relative;
+    box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
+}
+
+#content_result {
+    width: 100%;
+    padding: 1em 0 3em;
+    position: relative;
+    z-index: 1;
+    background-color: #B2868E;
+    border-top: 0.4em solid #8e6b71;
+}
+
 
 /** Connexion **/
 #connexion {
@@ -195,7 +212,7 @@ p {
     border-top: 0.4em solid #263342;
 }
 
-#title_connexion {
+#title_connexion, #title_formulaireRecherche {
     text-align: center;
     text-decoration: underline;
 }
@@ -214,12 +231,16 @@ input[type="text"], input[type="mdp"], textarea {
     width: -webkit-fill-available;;
 }
 
-#submit_connexion, #submit_formulaireAjout, #submit_formulaireVente {
+#submit_connexion, #submit_formulaireAjout, #submit_formulaireVente, #submit_formulaireRecherche {
     margin-top: 1.5em;
     text-align: right;
 }
 
-#button_connexion, #button_formulaireAjout, #button_formulaireVente {
+#submit_formulaireRecherche {
+    margin-right: 5%;
+}
+
+#button_connexion, #button_formulaireAjout, #button_formulaireVente, #button_formulaireRecherche {
     padding: 0.7em 1.2em;
     background-color: #e44c65;
     border-radius: 4px;
@@ -228,17 +249,17 @@ input[type="text"], input[type="mdp"], textarea {
     cursor: pointer;
 }
 
-#button_connexion:hover, #button_formulaireAjout:hover, #button_formulaireVente:hover {
+#button_connexion:hover, #button_formulaireAjout:hover, #button_formulaireVente:hover, #button_formulaireRecherche:hover {
     background-color: #e76278;
 }
 
 /** Formulaires **/
-#formulaireAjout, #formulaireVente {
+#formulaireAjout, #formulaireVente, #formulaireRecherche {
     margin: 3.5em 0 0 0;
     box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
 }
 
-#content_formulaireAjout {
+#content_formulaireAjout, #content_formulaireRecherche {
     width: 100%;
     padding: 1em 0 3em;
     position: relative;
@@ -256,13 +277,24 @@ input[type="text"], input[type="mdp"], textarea {
     border-top: 0.4em solid #9b3e50;
 }
 
-#title_formulaireAjout, #title_formulaireVente {
+#title_formulaireAjout, #title_formulaireVente, #title_result{
     text-align: center;
     text-decoration: underline;
 }
 
 #input_formulaireAjout, #input_formulaireVente {
     margin: 1em 20%;
+}
+
+#input_formulaireRecherche, #input_result {
+    margin: 1em 5%;
+    display:flex;
+}
+
+.vehicules {
+    border-bottom: 1px solid black;
+    width: 100%;
+    padding: 20px 0;
 }
 
 .left {
@@ -294,6 +326,10 @@ input[type="text"], input[type="mdp"], textarea {
 
 #input_formulaireAjout #portes {
     margin-left: 13px;
+}
+
+#input_formulaireRecherche #model{
+    width: 78px;
 }
 .right_maps {
     margin-left: 19%;
