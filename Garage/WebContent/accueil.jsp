@@ -16,7 +16,7 @@
 <body>
 <!-- Header -->
 <header id="header">
-    <a href="accueil.jsp">My Super Car</a>
+    <img id="logo" src="images/my_super_car.png" alt="Logo My Super Car">
     <nav id="nav">
         <ul>
             <li><a href="accueil.jsp">Accueil</a></li>
@@ -27,45 +27,96 @@
 </header>
 
 <!-- Banner -->
-<section id="title">
-    <div id="content_title">
-        <div>
-            <h2>The future has landed</h2>
-            <p>And there are no hoverboards or flying cars.<br/>
-                Just apps. Lots of mother flipping apps.</p>
+<div id="content">
+    <div id="title">
+        <div id="content_title">
+            <div>
+                <h3>Piéton : automobiliste descendu de sa voiture.</h3>
+                <p> Automobiliste : piéton remonté dans sa voiture.</p>
+            </div>
+            <span id="cars"><img src="images/cars.jpg" alt=""/></span>
         </div>
-        <span id="cars"><img src="images/cars.jpg" alt=""/></span>
+        <a href="#page" id="next"></a>
     </div>
-    <a href="#page" id="next"></a>
-</section>
 
 
-<div id="banner"></div>
+    <div id="banner"></div>
 
-<!-- One -->
-<section id="page">
-    <div id="content_page">
-        <div>
-            <p>Feugiat accumsan lorem eu ac lorem amet sed accumsan donec.
-                Blandit orci porttitor semper. Arcu phasellus tortor enim mi
-                nisi praesent dolor adipiscing. Integer mi sed nascetur cep aliquet
-                augue varius tempus lobortis porttitor accumsan consequat
-                adipiscing lorem dolor.</p>
+    <!-- One -->
+    <div id="page">
+        <div id="content_page">
+            <div>
+                <p>Joe le taxi,
+                    Y va pas partout,
+                    Y marche pas au soda,
+                    Son saxo jaune,
+                    Connaît toutes les rues par cœur,
+                    Tous les petits bars,
+                    Tous les coins noirs,
+                    Et la Seine,
+                    Et ses ponts qui brillent,
+                    Dans sa caisse,
+                    La musique a Joe,
+                    C'est la rumba,
+                    Le vieux rock au mambo,
+                    Joe le taxi,
+                    C'est sa vie,
+                    Le rhum au mambo,
+                    Embouteillage,
+                    Il est comme ça,
+                    Rhum et mambo,
+                    Joe, Joe, Joe</p>
+            </div>
+            <div>
+                <p>Dans sa caisse,
+                    La musique a Joe résonne,
+                    C'est la rumba,
+                    Le vieux rock au mambo bidon,
+                    Vas-y Joe,
+                    Vas-y Joe,
+                    Vas-y fonce,
+                    Dans la nuit vers l'amazone,
+                    Joe le taxi,
+                    Et Xavier Cugat,
+                    Joe le taxi,
+                    Et Yma Sumac,
+                    Joe, Joe, Joe,
+                    Joe le taxi,
+                    C'est sa vie,
+                    Le rhum au mambo,
+                    Embouteillage,
+                    Joe le taxi,
+                    Et les Mariachis,
+                    Joe le taxi,
+                    Et le cha-cha-chi,
+                    Joe le taxi,
+                    Et le cha-cha-chi,
+                    Vas-y Joe,
+                    Vas-y fonce,
+                    Dans la nuit vers l'amazone</p>
+            </div>
         </div>
-        <div>
-            <p>Morbi enim nascetur et placerat lorem sed iaculis neque ante
-                adipiscing adipiscing metus massa. Blandit orci porttitor semper.
-                Arcu phasellus tortor enim mi mi nisi praesent adipiscing. Integer
-                mi sed nascetur cep aliquet augue varius tempus. Feugiat lorem
-                ipsum dolor nullam.</p>
-        </div>
+        <a href="#content" id="back"></a>
     </div>
-    <a href="#title" id="back"></a>
-</section>
+</div>
 
 <!-- Footer -->
 <footer id="footer">
-    <p id="copyright">&copy; My Super Car - 20/05/2019</p>
+    <ul id="icons">
+        <li>
+            <a href="#" class="icon alt fa-twitter"><img src="images/twitter.PNG" alt="Twitter"></a>
+        </li>
+        <li>
+            <a href="#" class="icon alt fa-facebook"><img src="images/facebook.PNG" alt="Facebook"></a>
+        </li>
+        <li>
+            <a href="#" class="icon alt fa-linkedin"><img src="images/linkedin.PNG" alt="Linkedin"></a>
+        </li>
+        <li>
+            <a href="#" class="icon alt fa-envelope"><img src="images/email.PNG" alt="Email"></a>
+        </li>
+    </ul>
+    <p id="copyright">&copy; My Super Car | 20/05/2019</p>
 </footer>
 
 </body>
