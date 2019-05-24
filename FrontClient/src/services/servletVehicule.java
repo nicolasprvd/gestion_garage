@@ -64,7 +64,7 @@ public class servletVehicule extends HttpServlet {
 		vehicule.setCouleur(couleur);
 		vehicule.setPrix(prix);
 		vehicule.setOptions(options);
-		vehicule.setType("voiture");
+		// vehicule.setType("voiture");
 		vehicule.setEnVente(false);
 		vehicule.setEstLoue(false);
 		garage.achatVehicule(vehicule);
