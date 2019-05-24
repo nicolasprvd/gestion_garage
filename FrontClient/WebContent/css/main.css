@@ -1,0 +1,354 @@
+html, body {
+    background: #1C1D26;
+}
+
+body {
+    color: white;
+    font-family: "Roboto", Helvetica, sans-serif !important;
+    font-size: 25px;
+    font-weight: 100;
+    line-height: 1.75em;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+p {
+    margin: 0!important;
+}
+
+/* Header */
+#header {
+    background: #272832;
+    height: 3.5em;
+    line-height: 3.5em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+#header nav {
+    position: absolute;
+    right: 1em;
+    top: 0;
+}
+
+#header nav ul {
+    margin: 0 0.5em;
+}
+
+#header nav ul li {
+    display: inline-block;
+    margin-left: 1em;
+}
+
+#header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+#header nav ul li a:not(#sign_up):hover {
+    color: #79B3E4;
+    text-decoration: underline;
+}
+
+#logo {
+    width: 50px;
+    margin: 18px;
+}
+
+#sign_up {
+    height: 2em;
+    line-height: 2em;
+    padding: 0.7em 1.2em;
+    background-color: #e44c65;
+    box-shadow: none;
+    border-radius: 4px;
+}
+
+#sign_up:hover {
+    background-color: #e76278;
+}
+
+/* Titre (Accueil) */
+#title {
+    margin: 3em 0 0 0;
+    position: relative;
+    box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
+}
+
+#content_title {
+    padding: 1em 6em;
+    position: relative;
+    text-align: right;
+    vertical-align: middle;
+    background-color: #3F5A73;
+    z-index: 1;
+}
+
+#content_title div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#cars {
+    border-radius: 100%;
+    display: inline-block;
+    height: 18em;
+    margin-left: 3em;
+    vertical-align: middle;
+    width: 18em;
+}
+
+#cars img {
+    border-radius: 100%;
+    display: block;
+    width: 80%;
+    margin: 10% 0 0 10%;
+}
+
+
+/* Flèche next */
+#next {
+    bottom: 0;
+    height: 1.8em;
+    left: 50%;
+    margin: 0;
+    position: absolute;
+}
+
+#next:before {
+    background-image: url("../images/next.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    content: '';
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    z-index: 1;
+}
+
+/** Banière (Accueil) **/
+#banner {
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 19em;
+    overflow: hidden;
+    position: relative;
+}
+
+#banner:before {
+    background-image: url("../images/banner.jpg");
+    background-repeat: no-repeat;
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+/* Contenu page (Accueil) */
+#page {
+    width: 100%;
+    position: relative;
+    box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
+}
+
+
+#page #content_page {
+    display: inline-block;
+    padding: 4em 6em;
+    position: relative;
+    vertical-align: middle;
+    z-index: 1;
+    background-color: #B2868E;
+    border-top: 0.4em solid #8e6b71;
+}
+
+#page #content_page div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#page #content_page div h2 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+/** Connexion **/
+#connexion {
+    margin: 3.5em 0 0 0;
+    box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
+}
+
+#content_connexion {
+    width: 100%;
+    padding: 1em 0 3em;
+    position: relative;
+    z-index: 1;
+    background-color: #304054;
+    border-top: 0.4em solid #263342;
+}
+
+#title_connexion {
+    text-align: center;
+    text-decoration: underline;
+}
+
+#input_connexion {
+    margin: 1em 20%;
+}
+
+.form-group {
+    margin-bottom: 1em;
+    font-size: 18px;
+}
+
+input[type="text"], input[type="mdp"], textarea {
+    padding: 5px;
+    width: -webkit-fill-available;;
+}
+
+#submit_connexion, #submit_formulaireAjout, #submit_formulaireVente {
+    margin-top: 1.5em;
+    text-align: right;
+}
+
+#button_connexion, #button_formulaireAjout, #button_formulaireVente {
+    padding: 0.7em 1.2em;
+    background-color: #e44c65;
+    border-radius: 4px;
+    border: 1px wheat;
+    color: white;
+    cursor: pointer;
+}
+
+#button_connexion:hover, #button_formulaireAjout:hover, #button_formulaireVente:hover {
+    background-color: #e76278;
+}
+
+/** Formulaires **/
+#formulaireAjout, #formulaireVente {
+    margin: 3.5em 0 0 0;
+    box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
+}
+
+#content_formulaireAjout {
+    width: 100%;
+    padding: 1em 0 3em;
+    position: relative;
+    z-index: 1;
+    background-color: #9595b1;
+    border-top: 0.4em solid #7b778e;
+}
+
+#content_formulaireVente {
+    width: 100%;
+    padding: 1em 0 3em;
+    position: relative;
+    z-index: 1;
+    background-color: #AC455B;
+    border-top: 0.4em solid #9b3e50;
+}
+
+#title_formulaireAjout, #title_formulaireVente {
+    text-align: center;
+    text-decoration: underline;
+}
+
+#input_formulaireAjout, #input_formulaireVente {
+    margin: 1em 20%;
+}
+
+.left {
+    float: left;
+    width: 45%;
+}
+
+#input_formulaireAjout .left {
+    margin-top: 1%;
+    margin-left: 10%;
+}
+
+#input_formulaireAjout .right {
+    margin-top: 3%;
+    margin-left: 60%;
+}
+
+#input_formulaireAjout #carburant {
+    margin-left: 5px;
+}
+
+#input_formulaireAjout #date {
+    margin-left: 33px;
+}
+
+#input_formulaireAjout #price {
+    margin-left: 32px;
+}
+
+#input_formulaireAjout #portes {
+    margin-left: 13px;
+}
+.right_maps {
+    margin-left: 19%;
+}
+
+input[type="number"], select {
+    padding: 5px;
+}
+
+/** Flèche retour **/
+#back {
+    bottom: 0;
+    height: 1.8em;
+    left: 50%;
+    margin: 0;
+    position: absolute;
+}
+
+#back:before {
+    background-image: url("../images/back.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    content: '';
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    z-index: 1;
+}
+
+/* Footer */
+#footer {
+    background: #272833;
+    padding: 0.5em 0;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+}
+
+#footer #copyright {
+    color: #FFFFFF;
+    opacity: 0.5;
+    font-size: 0.5em;
+    text-align: center;
+}
+
+#icons {
+    margin: 30px 10px 10px;
+    padding: 0;
+}
+
+#icons li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+#icons img {
+    width: 80%;
+}
