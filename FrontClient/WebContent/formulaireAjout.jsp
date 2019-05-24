@@ -67,7 +67,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="km">Nombre de kilomètres :</label>
+                            <label for="km">Kilomètres :</label>
                             <input type="number" id="km" size="6" required>
                         </div>
                     </div>
@@ -87,12 +87,12 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="price">Prix d'achat :</label>
+                            <label for="price">Prix :</label>
                             <input type="number" id="price" size="8" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="portes">Nombre de portes :</label>
+                            <label for="portes">Portes :</label>
                             <select id="portes" required>
                                 <option value="3">3</option>
                                 <option value="5">5</option>

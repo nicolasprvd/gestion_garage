@@ -75,7 +75,7 @@
                         width="350" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
         </div>
-        <a href="#content" id="back"></a>
+        <a href="#" id="back"></a>
     </div>
 </div>
 
